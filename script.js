@@ -78,13 +78,30 @@ switch (windDirectionRandomNumber) {
   case 7 : windDirection = 'North West'
   break;
   default : windDirection = 'Unknown, system malfunction'
-}
-;
+};
+
 // Temperature Section
+
+const getTemp = (todaysSeason) => {
+
+  tempRange = []
+
+  for (let i = todaysSeason.tempLow; i < todaysSeason.tempHigh; i++) {
+    tempRange.push(i)
+  }
+
+  let tempRangeRandomNumber = Math.floor(Math.random() * tempRange.length);
+
+  let todaysTempPrediction = tempRange[tempRangeRandomNumber];
+
+  return todaysTempPrediction
+}
+
+let todaysTemp = getTemp(todaysSeason);
 
 // Weather Section
 
 // Final string
 
-let prediction = `The season today is ${todaysSeason.season}, we are predicting an average windspeed of ${todaysWindSpeed}mph from the ${windDirection} `
+let prediction = `The season today is ${todaysSeason.season}, we are predicting an average windspeed of ${todaysWindSpeed}mph from the ${windDirection}. The average temperature for today is ${todaysTemp}*C. `
 console.log(prediction)
