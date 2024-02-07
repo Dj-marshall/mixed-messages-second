@@ -56,13 +56,35 @@ let todaysWindSpeed = getWindSpeed(todaysSeason);
 
 // Wind Direction Section
 
-// Temperature Section
+let windDirection = ''
 
-// Precipitation Section
+let windDirectionRandomNumber = Math.floor(Math.random() * 8)
+
+switch (windDirectionRandomNumber) {
+  case 0 : windDirection = 'North'
+  break;
+  case 1 : windDirection = 'North East'
+  break;
+  case 2 : windDirection = 'East'
+  break;
+  case 3 : windDirection = 'South East'
+  break;
+  case 4 : windDirection = 'South'
+  break;
+  case 5 : windDirection = 'South West'
+  break;
+  case 6 : windDirection = 'West'
+  break;
+  case 7 : windDirection = 'North West'
+  break;
+  default : windDirection = 'Unknown, system malfunction'
+}
+;
+// Temperature Section
 
 // Weather Section
 
 // Final string
 
-let prediction = `The season today is ${todaysSeason.season}, we are predicting an average windspeed of ${todaysWindSpeed}mph from the `
+let prediction = `The season today is ${todaysSeason.season}, we are predicting an average windspeed of ${todaysWindSpeed}mph from the ${windDirection} `
 console.log(prediction)

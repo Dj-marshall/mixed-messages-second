@@ -17,3 +17,7 @@ todaysSeason is declared and is assigned the value of the function when run.
 ---
 the function for getWindSpeed declares the variable windSpeed then uses an if statement looking at the todaysSeason.season (gets the season name) and changes the predicted wind speed based on this value. the function then returns the predicted wind speed. 
 todaysWindSpeed is declared and given the value of the function passing todaysSeason as the parameter.
+---
+## Wind Direction Selector
+---
+the wind direction selector declares windDirection variable to store tha value. windDirectionRandomNumber then generates a random number for the switch statement to use to randomly select the value. A default value is added a the end incase of malfunction.
