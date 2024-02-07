@@ -3,9 +3,9 @@
 // Seasons Array 
 
 let seasonInfo = [
-  {season: 'Spring',
-   tempHigh: 22,
-   tempLow: 8
+    {season: 'Spring',
+    tempHigh: 22,
+    tempLow: 8
   },
     {season: 'Summer',
     tempHigh: 36,
@@ -20,8 +20,19 @@ let seasonInfo = [
     tempLow: -6
   },  
 ];
+//console.log(seasonInfo); testing season info reading okay
 
 // Season Selector
+
+const getSeason = () => {
+  let seasonRandomNumber = Math.floor(Math.random() * 4);
+  //console.log(seasonRandomNumber) testing for random number functioning okay
+  let selectedSeason = seasonInfo[seasonRandomNumber];
+  //console.log(selectedSeason); testing selected season working okay
+  return selectedSeason;
+}
+
+let todaysSeason = getSeason();
 
 // Wind Speed Section 
 
@@ -31,3 +42,7 @@ let seasonInfo = [
 
 // Precipitation Section
 
+// Final string
+
+let prediction = `The season today is ${todaysSeason.season}`
+console.log(prediction)
