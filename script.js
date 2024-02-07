@@ -20,15 +20,15 @@ let seasonInfo = [
     tempLow: -6
   },  
 ];
-//console.log(seasonInfo); testing season info reading okay
 
 // Season Selector
 
 const getSeason = () => {
+
   let seasonRandomNumber = Math.floor(Math.random() * 4);
-  //console.log(seasonRandomNumber) testing for random number functioning okay
+
   let selectedSeason = seasonInfo[seasonRandomNumber];
-  //console.log(selectedSeason); testing selected season working okay
+
   return selectedSeason;
 }
 
@@ -36,13 +36,33 @@ let todaysSeason = getSeason();
 
 // Wind Speed Section 
 
+const getWindSpeed = (todaysSeason) => {
+
+  let windSpeed = 0;
+
+  if (todaysSeason.season === 'Spring') {
+    windSpeed = Math.floor(Math.random() * 25)
+  } else if (todaysSeason.season === 'Summer') {
+    windSpeed = Math.floor(Math.random() * 15)
+  } else if (todaysSeason.season === 'Autumn') {
+    windSpeed = Math.floor(Math.random() * 35)
+  } else if (todaysSeason.season === 'Winter') {
+    windSpeed = Math.floor(Math.random() * 55)
+  }
+
+  return windSpeed;
+}
+let todaysWindSpeed = getWindSpeed(todaysSeason);
+
 // Wind Direction Section
 
 // Temperature Section
 
 // Precipitation Section
 
+// Weather Section
+
 // Final string
 
-let prediction = `The season today is ${todaysSeason.season}`
+let prediction = `The season today is ${todaysSeason.season}, we are predicting an average windspeed of ${todaysWindSpeed}mph from the `
 console.log(prediction)
