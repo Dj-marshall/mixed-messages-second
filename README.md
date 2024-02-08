@@ -26,3 +26,14 @@ the wind direction selector declares windDirection variable to store tha value. 
 ---
 the temperature selector section declares a function getTemp which takes todaysSeason as a parameter. An empty array of tempRange to store the ranges of temperatures for the day. A for loop is used to generate the options for the temperatures of the day based on todaysSeason max and min values as stopping points. This array is then used by todaysTempPrediction using bracket notation and a random number generated from tempRangeRandomNumber to generate a random temperature within the range. 
 This is then assigned to the todays temp variable.
+---
+## Weather Section
+---
+the weather selection declares a new array of weather options. 
+two if statements are used the first uses .pop() to remove snowy from the array if todaysSeason.season is not equal to winter.
+the second is checking if todaysSeason.season is summer. If it is it uses mistyIndex which is the index of 'misty' and splice to cut 'misty' from the array.
+a random number weatherRandomNumber is declared based on the weatherOptions.length of the array at the time. todaysWeather then uses bracket notation to randomly select todays weather. 
+---
+## Final String
+---
+prediction is declared which uses template literals to produce the final string of the weather today.

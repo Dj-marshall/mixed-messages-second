@@ -99,9 +99,25 @@ const getTemp = (todaysSeason) => {
 
 let todaysTemp = getTemp(todaysSeason);
 
-// Weather Section
+// Weather Section 
+
+let weatherOptions = ['Rainy', 'Cloudy', 'Sunny', 'Misty', 'Snowy']
+
+
+if (todaysSeason.season !== 'Winter') {
+  weatherOptions.pop()
+}
+
+if (todaysSeason.season === 'Summer') {
+  let mistyIndex = weatherOptions.indexOf('Misty');
+  weatherOptions.splice(mistyIndex,1);
+}
+
+let weatherRandomNumber = Math.floor(Math.random() * weatherOptions.length);
+let todaysWeather = weatherOptions[weatherRandomNumber];
 
 // Final string
 
-let prediction = `The season today is ${todaysSeason.season}, we are predicting an average windspeed of ${todaysWindSpeed}mph from the ${windDirection}. The average temperature for today is ${todaysTemp}*C. `
+let prediction = `The season today is ${todaysSeason.season}, it is going to be ${todaysWeather}. We are predicting an average windspeed of ${todaysWindSpeed}mph from the ${windDirection}. The average temperature for today is ${todaysTemp}*C. `
+
 console.log(prediction)
